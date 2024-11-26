@@ -1,0 +1,428 @@
+/* nav{
+    background-color: var(--cor1);
+} */
+@import url("../../global/global.css");
+@import url("../../partials/index/style.css");
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.alert-box {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    z-index: 1050; /* Garante que fique acima de tudo */
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.container{
+    /* background-color: rgb(96, 153, 153); */
+    /* margin-left: 10%; */
+    width: 80vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 7rem;
+    padding: 0 2rem;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+
+.container .login-container {
+    /* background-color: rgb(255, 255, 255); */
+    padding: 10px;
+}
+
+
+
+.img{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.img img{
+    width: 400px;
+}
+
+
+.logo{
+    width: 150px;
+    /* background-color: aqua; */
+    margin-bottom: 40px;
+}
+
+
+.login-container{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+
+
+
+
+form{
+    width: 360px;
+}
+
+form h2{
+    color: var(--cor3);
+    font-size: 30px;
+    margin: 15px 0;
+    text-transform: uppercase;
+}
+
+form p{
+    color: var(--cor3);
+    font-size: 14px;
+}
+
+.input-div{
+    position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 25px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid;
+}
+
+.input-div:after, .input-div:before{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 50%;
+    height: 2px;
+    background-color: var(--cor1);
+    transition: 0.2s;
+}
+
+.input-div:after{
+    right: 50%;
+}
+
+.input-div:before{
+    left: 50%;
+}
+
+
+
+
+.input-div.focus .i i{
+    color: var(--cor1);
+}
+
+.input-div.focus div h5{
+    top: -5px;
+    font-size: 15px;
+}
+
+
+.input-div.focus:after, .input-div.focus:before{
+    width: 50%;
+
+}
+
+.input-div one{
+   margin-top: 0;
+}
+
+.input-div two{
+    margin-bottom: 4px;
+ }
+ 
+i{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.i i{
+    color: var(--cor3);
+    font-size: 20px;
+    margin-top: 50%;
+    transition: 0.2s;
+}
+
+.input-div > div{
+    position: relative;
+    height: 45px;
+}
+
+.input-div > div h5{
+    /* display: none; */
+    color: var(--cor3);
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    transition: .2s;
+}
+
+.input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    outline: none;
+    background: none;
+    border-radius: 5px;
+    padding: 0.5rem 0.7rem;
+    font-size: 1rem;
+}
+
+
+a{
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+
+a:hover{
+    color: #38d39f;
+}
+
+
+.btn2{
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    margin: 1rem 0;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    background-color: var(--cor1);
+    color: white;
+}
+
+
+.btn2:hover{
+    border:none;
+    color: white;
+    background-color: var(--cor2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .link a{
+    position: relative;
+    padding-bottom: 0.75rem;    
+    color: white;
+    font-family: poppins;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.link a:hover{ 
+    color: white;
+}
+
+
+.link a::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+ 
+.link a:hover::after{
+    width: 70%;
+     
+}
+
+.btn{
+    border: solid white 2px;
+    color: white;
+}
+
+.btn:hover{
+    background-color: white;
+    color: var(--cor1);
+} */
+
+
+
+
+
+
+
+/* 
+#empresaButton{
+    align-items: center;
+    gap: 1em;
+    display: inline-flex;
+    background-color: var(--cor1);
+    cursor: pointer;
+    border: solid 1.5px var(--cor1);
+    padding: 1em 3em;
+    border-radius: 24px;
+    font-size: 15px;
+    color:#ffffff;
+    font-weight: 500;
+}
+
+#empresaButton:hover{
+    background:var(--cor2);
+    border-color: var(--cor2);
+    color: white;
+}
+
+#empresaButton i{
+   font-size: 2em;
+}
+
+#clienteButton{
+    align-items: center;
+    gap: 1em;
+    display: inline-flex;
+    background-color: var(--cor1);
+    cursor: pointer;
+    border: solid 1.5px var(--cor1);
+    padding: 1em 3em;
+    border-radius: 24px;
+    font-size: 15px;
+    color:#ffffff;
+    font-weight: 500;
+}
+
+#clienteButton:hover{
+    background: var(--cor2);
+    border-color: var(--cor2);
+    color: white;
+}
+
+#clienteButton i{
+   font-size: 2em;
+}
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Responsivo para telas pequenas */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+        width: 90vw;
+        height: auto;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .img img {
+        display: none;
+        width: 50%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .input-div {
+        grid-template-columns: 10% 90%;
+    }
+
+    .input-div > div h5 {
+        font-size: 14px;
+    }
+
+    .btn2 {
+        width: 100%;
+        height: 45px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsivo para telas menores que 480px */
+@media (max-width: 480px) {
+    .container {
+        grid-gap: 1rem;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .img img {
+        display: none;
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    form h2 {
+        font-size: 24px;
+    }
+
+    form p {
+        font-size: 12px;
+    }
+
+    .input-div {
+        margin: 15px 0;
+        padding: 3px 0;
+    }
+
+    .input-div > div h5 {
+        font-size: 12px;
+    }
+
+    .btn2 {
+        height: 40px;
+        font-size: 0.8rem;
+    }
+
+    .login-container {
+        padding: 5px;
+    }
+}

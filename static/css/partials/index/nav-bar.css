@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+img{
+    width: 100%;
+    display: flex;
+}
+
+.logo{
+    width: 10%;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav{
+    display: flex;
+    padding-left: 8%;
+    padding-right: 8%;
+    height: 90px;
+    width: 100%;
+    max-width: 1200;
+    margin: 0 auto;
+    /* padding: 2rem 1rem; */
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+#nav-links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* 
+#nav-links li{
+    display: flex;
+    align-items: center;
+} */
+
+
+.link a{
+    position: relative;
+    padding: 0.2rem;    
+    color: #494949;
+    font-family: poppins;
+    font-weight: bold;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+
+.link a:hover{ 
+    color: #41B06E;
+    
+}
+
+
+.link a::after{
+   content: "";
+   position: absolute;
+   height: 2px;
+   width: 0;
+   bottom: 0;
+   left: 0;
+   background-color: #41B06E;
+   transition: all 0.2s ease;
+   
+}
+
+/* 
+.link a:hover::after{
+    width: 70%;
+    
+} */
+
+
+.btn{
+    padding: 0.7rem 3rem;
+    background-color: #41B06E;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+.btn:hover{
+    background-color: #2f8953;
+}
+
+
+.btn2{
+    padding: 0.5rem 4rem;
+    background-color: white;
+    color:#2f8953;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: #ffffff solid 1px;
+}
+
+
+.btn2:hover{
+    color: #134226;
+    border: #494949 solid 1px;
+}
+
+
+
+.menu-icon{
+    display: none;
+}
+
+.menu-icon i{
+    color: var(--cor2);
+    font-size: 30px;
+}
+
+
+.drop-down{
+    position: absolute;
+    z-index: 2;
+    /* padding: 10px 0px; */
+    display: none;
+    /* margin: 0.5rem -0.5rem; */
+    margin-top: 0px;
+    background-color: rgb(255, 255, 255);
+    color: var(--cor4);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    
+}
+
+
+
+.link, .drop-down li{
+    list-style: none;
+    height: 100%;
+    font-weight: 600;
+    /* padding: 0.5em 1em; */
+    cursor: pointer;
+    /* margin-top: 10px; */
+    padding: 10px 15px;
+
+}
+
+.drop-down li:hover{
+    
+    background-color: var(--cor2);
+    color: white;
+}
+
+.cadastro:hover .drop-down{
+    display: block;
+}
+
+
+.drop-down li a:hover{
+    color: white;
+}
+
+
+.cadastro .dropdown-icon{
+    font-size: 20px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.2s ease;
+    right: -5px;
+}
+
+.cadastro:hover .dropdown-icon{
+    transform: rotate(180deg);
+}
+

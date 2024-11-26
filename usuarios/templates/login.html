@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promofacil</title>
+    <link rel="stylesheet" href="{% static 'css/partials/login/login.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="icon" href="{% static 'img/logo_promo-facil/icone_promo.png' %}" type="image/png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+{% block conteudo %}
+<div class="container">
+    {% if status == '1' %}
+        <div class="alert-box">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Email ou senha inválida.</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if status == '2' %}
+        <div class="alert-box">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Faça login antes de tentar acessar o sistema.</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    {% endif %}
+
+
+    <div class="img">
+        <img src="{% static 'img/login/login.svg' %}">
+    </div>
+
+
+    <div class="login-container">
+        <a href="../../index.html">
+            <img class="logo" src="{% static 'img/logo_promo-facil/logo_verde_promo_facil.svg'%}">
+        </a>
+
+        <form method="POST" action="{% url 'valida_login'%}">
+            {% csrf_token %}
+
+            <h2>Bem vindo!</h2>
+            <p>Por favor, insira seus dados</p>
+            
+            <div class="input-div one ">
+                <div class="i">
+                    <i class="bx bx-envelope"></i>
+                </div>
+
+                <div>
+                    <h5>E-mail</h5>
+                    <input class="input" type="email" name="email">
+                </div>
+            </div>
+
+            <div class="input-div two">
+                <div class="i">
+                    <i class="bx bx-lock"></i>
+                </div>
+
+                <div>
+                    <h5>Senha</h5>
+                    <input class="input" type="password" name="senha">
+                </div>
+            </div>
+
+            <a href="#">Esqueceu a senha?</a>
+            <div id="loginForm">
+                <input type="submit" class="btn2" value="Login">
+            </div>
+
+            
+        </form>
+        
+    </div>
+
+</div>
+{% endblock %}
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="{% static '/js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+
+
+
+
+nav{
+    /* display: flex; 
+    align-items: center;
+    justify-content: space-between; */
+    padding-left: 15%;
+    padding-right: 15%;
+    height: 140px;
+    width: 100%;
+    max-width: 1200;
+    margin: 0 auto;
+    top: 0;
+    /* z-index: 99; */
+    /* padding: 2rem 1rem; */
+    background-color: var(--cor1);
+    /* gap: 2rem; */
+    /* position: fixed; */
+}
+
+
+nav .nav-top{
+    width: 100%;
+    height: 85px;
+    /* background-color: #e74c3c; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .nav-bottom{
+    width: 100%;
+    height: 45px;
+    /* background-color: #1b4716; */
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.search-bar input[type="search"]{
+    background:transparent;
+    width: 70vh;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: #3f3f3f;
+}
+
+.search-bar i{
+    font-size: 1.5rem;
+    color: #979797;
+}
+
+
+
+
+.logo{
+    width: 10%;
+}
+
+
+
+
+ 
+.perfil{
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor:pointer;
+}
+
+.perfil i{
+    display: flex;
+    color: var(--cor1);
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
+
+/* 
+
+.perfil {
+    position: relative;
+    cursor: pointer;
+} */
+
+
+.dropdown1{
+    display: none;
+    position: absolute;
+    left: 0%;
+    /* right: 0; */
+    top: 100%;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 10;
+    
+}
+
+.dropdown1 a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    width: 100%;
+}
+
+.dropdown1 a i {
+    margin-right: 8px;
+}
+
+.dropdown1 a:hover {
+    background-color: #ddd;
+}
+
+
+
+
+/********************/
+
+
+.nav-bottom ul li {
+    position: relative;
+}
+
+.nav-bottom ul li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.nav-bottom ul li a i {
+    font-size: 1.5rem;
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/********************/
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* background-color: #333; */
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para os itens da lista */
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+/* Estilo para os links dentro dos itens da lista */
+ul li a {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    display: block;
+    padding: 20px 25px;
+    text-decoration: none;
+    /* text-align: center; */
+    font-size: 15px;
+}
+
+/* Estilo para os submenus dropdown */
+ul li ul.dropdown {
+    
+    display: none;
+    width: 250px; /* Ajuste o valor conforme necessário */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 999;
+    padding: 0;
+}
+
+/* Estilo para os itens dentro do submenu dropdown */
+ul li ul.dropdown li {
+    /* padding: 10px 0; */
+    display: block;
+    /* margin: 20px 0; */
+}
+
+ul li ul.dropdown li a{
+    color: #313131;
+    letter-spacing: 0;
+}
+
+/* Exibir o submenu dropdown ao passar o mouse sobre o item pai */
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+ul li ul.dropdown li a {
+    /* padding: 10px 20px; */
+    font-size: 14px;
+}
+
+/* Estilo para os links ao passar o mouse */
+
+ul li ul.dropdown li a:hover {
+    background-color: #f2f2f2;
+    color: var(--cor1);
+    
+}
+
+ul li:hover a{
+    background-color: #ffffff;
+    /* border-radius: 5px; */
+    color: var(--cor1);
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor1); /* cor de fundo do botão */
+    color: #fff; /* cor do ícone */
+    font-size: 30px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s, visibility 0.3s;
+    opacity: 1;
+    /* visibility: hidden; */
+}
+
+.scroll-to-top:hover{
+    background-color: var(--cor2);
+}
+
+
+
+
+.nav-bottom .dropdown-store li img {
+    width: 50px;
+    height: 50px;
+    /* margin-right: 30px; */
+    margin: 20px;
+    /* padding: 20px; */
+}
+
+ul li ul.dropdown-store{
+    
+    display: none;
+    width: 350px; /* Ajuste o valor conforme necessário */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 999;
+    padding: 0;
+}
+
+
+ul li ul.dropdown-store li {
+    /* padding: 10px 0; */
+    display: block;
+    /* margin: 20px 0; */
+}
+
+
+ul li ul.dropdown-store li a{
+    color: #313131;
+    letter-spacing: 0;
+}
+
+/* Exibir o submenu dropdown ao passar o mouse sobre o item pai */
+ul li:hover ul.dropdown-store {
+    display: block;
+}
+
+ul li ul.dropdown-store li a {
+    /* padding: 10px 20px; */
+    font-size: 14px;
+}
+
+/* Estilo para os links ao passar o mouse */
+
+ul li ul.dropdown-store li a:hover {
+    background-color: #f2f2f2;
+    color: var(--cor1);
+    
+}
+
+ul li:hover a{
+    background-color: #ffffff;
+    /* border-radius: 5px; */
+    color: var(--cor1);
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+
+.dropdown-store li a {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    display: block;
+    padding: 40px 25px;
+    text-decoration: none;
+    /* text-align: center; */
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+.nav-logo{
+    max-width: 100px;
+}
+
+.btn{
+    padding: 0.7rem 3rem;
+    /* background-color: white; */
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border: solid white 1px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:hover{
+    border: solid white 1px;
+    background-color: white;
+    color: var(--cor1);
+}
+
+.btn2{
+    padding: 0.5rem 4rem;
+    background-color: white;
+    color:#2f8953;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: #ffffff solid 1px;
+}
+
+
+.btn2:hover{
+    color: #134226;
+    border: #494949 solid 1px;
+}

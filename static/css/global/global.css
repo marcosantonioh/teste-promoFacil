@@ -1,0 +1,17 @@
+
+:root {
+    --cor1: #41B06E;
+    --cor2: #2f8953;
+    --cor3: #141E46;
+    --cor4: #494949;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: poppins;
+    -webkit-tap-highlight-color: transparent;
+}
