@@ -7,10 +7,13 @@ from decimal import Decimal
 # Create your views here.
 
 def home(request):
-	if request.session.get('usuario'):
-		return HttpResponse('PÁGINA HOME')
-	else:
-		return redirect('/auth/login/?status=2')
+    return render(request, 'home.html')
+
+# def home(request):
+# 	if request.session.get('usuario'):
+# 		return HttpResponse('PÁGINA HOME')
+# 	else:
+# 		return redirect('/auth/login/?status=2')
 
 def criar_produto(request):
 	nome_produto = request.POST.get("nome_produto")

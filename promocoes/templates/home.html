@@ -1,0 +1,230 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromoFácil - Promoções</title>
+    <link rel="stylesheet" href="{% static 'css/partials/promocoes/promocoes.css' %}">
+    <link rel="icon" href="{% static 'img/logo_promo-facil/icone_promo.png' %}" type="image/png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+
+    <div class="cookie-banner" id="cookies-msg">
+        <div class="cookie-text">
+            <p>Utilizamos cookies para melhorar o desempenho e segurança do site, além de personalizar conteúdo e anúncios. Se desejar, você pode <a id="configCookies">configurar suas preferências</a> ou conferir nossa Política de Privacidade.</p>
+            <div class="button-container">
+                <button onclick="aceito()">Aceitar Cookies</button>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <nav class="nav-bar">
+
+        <div class="nav-top">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="{% static 'img/logo_promo-facil/logo_branca__promo_facil.svg' %}">
+                </a>
+            </div>
+    
+            <div class="search-bar">
+                    <i class="bx bx-search"></i>
+                    <input type="search" name="pesquisar" id="search" placeholder="pesquisar">
+                </form>
+            </div>
+    
+            <div class="perfil" id="perfilLink">
+            <i class="bx bxs-user" id="perfilIcon"></i>
+            <div class="dropdown1" id="dropdownMenu">
+                <a href="#"><i class="bx bxs-user"></i> Nome do Usuário</a>
+                <a href="./gerenciar_perfil.html" id="configLink"><i class="bx bx-cog"></i> Configurações</a>
+                <a href="./promocoes_user.html" id="logoutLink"><i class="bx bx-log-out"></i> Logout</a>
+            </div>
+        </div>
+            <!-- <a href="login.html" class="btn">Login</a>  -->
+        </div>
+
+           
+
+        <div class="nav-bottom">
+            <ul>
+                <li>
+                    <a href="#"><i class="bx bx-menu"></i>Categorias</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Alimentos e Bebidas</a></li>
+                        <li><a href="#">Higiene e Beleza</a></li>
+                        <li><a href="#">Produtos de Limpeza</a></li>
+                        <li><a href="#">Pet Shop</a></li>
+                        <li><a href="#">Utensílios Domésticos</a></li>
+                        <li><a href="#">Saúde e Bem-Estar</a></li>
+                        <li><a href="#">Doces</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="bx bx-store"></i>Lojas</a>
+                    <ul class="dropdown-store">
+                        <li><a href="#"><img src="{% static 'img/logo_lojas/paraiba.png' %}" alt="Loja 1"> Paraiba</a></li>
+                        <li><a href="#"><img src="{% static 'img/logo_lojas/atacadista.png'%}" alt="Loja 2">Atacadão</a></li>
+                        <li><a href="#"><img src="{% static 'img/logo_lojas/americanas.png'%}" alt="Loja 3"> Lojas Americanas</a></li>
+                        <li><a href="#"><img src="{% static 'img/logo_lojas/assai.png'%}" alt="Assaí Atacadista"> Assaí</a></li>
+                        <li><a href="#"><img src="{% static 'img/logo_lojas/magalu.png'%}" alt="Loja 5"> MAgazine Luiza</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        
+
+
+    </nav>
+
+
+
+
+
+
+    <div class="carousel-container">
+        <div class="carousel-slide" id="carousel-slide">
+            <div class="carousel-item">
+                <img src="{% static 'img/banners/Buscape_Acao_Oferta_do_Dia_V2_Desk_3640e2b163.png'%}" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/banners/Buscape_aniversario_fast_shop_7_V1_Desk_27f4ea0ebc.png'%}" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/banners/Hero_Buscape_Prime_Day_2024_Desk_v2_7eed59d165.png'%}" alt="Slide 3">
+            </div>
+        </div>
+        <div class="carousel-nav">
+            <button id="prevBtn">&#10094;</button>
+            <button id="nextBtn">&#10095;</button>
+        </div>
+    </div>
+
+
+
+
+    
+    <div class="recommended-offers-container">
+
+
+        <button id="scroll-to-top" class="scroll-to-top">
+            <i class="bx bx-up-arrow-alt"></i>
+        </button>
+
+
+        <h2>Ofertas Recomendadas</h2>
+        <div class="recommended-offers">
+            <div class="offer">
+                <img src="{%static 'img/produtos/heineken.webp' %}" alt="Imagem da Oferta 1">
+                <div class="offer-details">
+                    <p class="description">8 Packs Heineken Cerveja Pilsen - 8 latas de 269ml</p>
+                    <p class="original-price"><del>R$ 246,00</del></p>
+                    <p class="price">R$ 159,00</p>
+                    <p class="store-name">Loja 1</p>
+                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
+
+                </div>
+            </div>
+            <div class="offer">
+                <img src="{% static 'img/produtos/frauda.jpg'%}" alt="Imagem da Oferta 2">
+                <div class="offer-details">
+                    <p class="description">Fralda Mili Love&Care Mega Tam XG - 44 Unidades</p>
+                    <p class="original-price"><del>R$ 53,00</del></p>
+                    <p class="price">R$ 46,00</p>
+                    <p class="store-name">Loja 2</p>
+                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
+
+                </div>
+            </div>
+            <div class="offer">
+                <img src="{% static 'img/produtos/image190.png'%}" alt="Imagem da Oferta 3">
+                <div class="offer-details">
+                    <p class="description">Água Micelar Nivea MicellAir Efeito Matte 200ml</p>
+                    <p class="original-price"><del>R$ 29,44</del></p>
+                    <p class="price">R$ 12,74</p>
+                    <p class="store-name">Loja 3</p>
+                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
+
+                </div>
+            </div>
+            <div class="offer">
+                <img src="{%static 'img/produtos/heineken.webp' %}" alt="Imagem da Oferta 1">
+                <div class="offer-details">
+                    <p class="description">8 Packs Heineken Cerveja Pilsen - 8 latas de 269ml</p>
+                    <p class="original-price"><del>R$ 246,00</del></p>
+                    <p class="price">R$ 159,00</p>
+                    <p class="store-name">Loja 1</p>
+                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
+
+                </div>
+            </div>
+            <div class="offer">
+                <img src="{% static 'img/produtos/frauda.jpg'%}" alt="Imagem da Oferta 2">
+                <div class="offer-details">
+                    <p class="description">Fralda Mili Love&Care Mega Tam XG - 44 Unidades</p>
+                    <p class="original-price"><del>R$ 53,00</del></p>
+                    <p class="price">R$ 46,00</p>
+                    <p class="store-name">Loja 2</p>
+                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
+
+                </div>
+            </div>
+            <div class="offer">
+                <img src="{% static 'img/produtos/image190.png'%}" alt="Imagem da Oferta 3">
+                <div class="offer-details">
+                    <p class="description">Água Micelar Nivea MicellAir Efeito Matte 200ml</p>
+                    <p class="original-price"><del>R$ 29,44</del></p>
+                    <p class="price">R$ 12,74</p>
+                    <p class="store-name">Loja 3</p>
+                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
+
+                </div>
+            </div><div class="offer">
+                <img src="{%static 'img/produtos/heineken.webp' %}" alt="Imagem da Oferta 1">
+                <div class="offer-details">
+                    <p class="description">8 Packs Heineken Cerveja Pilsen - 8 latas de 269ml</p>
+                    <p class="original-price"><del>R$ 246,00</del></p>
+                    <p class="price">R$ 159,00</p>
+                    <p class="store-name">Loja 1</p>
+                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
+
+                </div>
+            </div>
+            <div class="offer">
+                <img src="{% static 'img/produtos/frauda.jpg'%}" alt="Imagem da Oferta 2">
+                <div class="offer-details">
+                    <p class="description">Fralda Mili Love&Care Mega Tam XG - 44 Unidades</p>
+                    <p class="original-price"><del>R$ 53,00</del></p>
+                    <p class="price">R$ 46,00</p>
+                    <p class="store-name">Loja 2</p>
+                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
+
+                </div>
+            </div>
+            <div class="offer">
+                <img src="{% static 'img/produtos/image190.png'%}" alt="Imagem da Oferta 3">
+                <div class="offer-details">
+                    <p class="description">Água Micelar Nivea MicellAir Efeito Matte 200ml</p>
+                    <p class="original-price"><del>R$ 29,44</del></p>
+                    <p class="price">R$ 12,74</p>
+                    <p class="store-name">Loja 3</p>
+                    
+                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="{% static 'js/promocoes.js' %}"></script>
+</body>
+</html>
