@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from .models import Empresa,Produto
 from decimal import Decimal
+from django.contrib import messages
 
 # Create your views here.
 
@@ -16,28 +17,40 @@ def home(request):
 # 		return redirect('/auth/login/?status=2')
 
 def criar_produto(request):
-	nome_produto = request.POST.get("nome_produto")
-	preco_original = request.POST.get("preco_original")
-	preco_promocional = request.POST.get("preco_promocional")
-	descricao = request.POST.get("descricao")
+    nome_produto = request.POST.get("nome_produto")
+    preco_original = request.POST.get("preco_original")
+    preco_promocional = request.POST.get("preco_promocional")
+    descricao = request.POST.get("descricao")
 
-	# Garantir que os valores numéricos sejam convertidos corretamente, tratando vazios ou None
-	if preco_original not in (None, ''):
-		preco_original = Decimal(preco_original)
-	else:
-		preco_original = None
+    # Validação: Checar se os campos obrigatórios estão preenchidos
+    if not nome_produto or not preco_original or not preco_promocional or not descricao:
+        return render(request, 'cadastroProduto.html', {
+            'erro': 'Todos os campos são obrigatórios!'
+        })
 
-	if preco_promocional not in (None, ''):
-		preco_promocional = Decimal(preco_promocional)
-	else:
-		preco_promocional = None
+    try:
+        # Conversão de valores numéricos
+        preco_original = Decimal(preco_original)
+        preco_promocional = Decimal(preco_promocional)
+    except Exception as e:
+        return render(request, 'cadastroProduto.html', {
+            'erro': 'Os preços devem ser números válidos!'
+        })
 
-	produto = Produto(nome_produto=nome_produto,
-					  preco_original =preco_original,
-					  preco_promocional=preco_promocional,
-					  descricao=descricao)
-	produto.save()
-	return render(request, 'cadastroProduto.html')
+    # Criar e salvar o produto
+    produto = Produto(
+        nome_produto=nome_produto,
+        preco_original=preco_original,
+        preco_promocional=preco_promocional,
+        descricao=descricao
+    )
+    produto.save()
+
+    return render(request, 'cadastroProduto.html', {
+        'mensagem': 'Produto cadastrado com sucesso!'
+    })
+
+
 
 
 def criar_empresa(request):
