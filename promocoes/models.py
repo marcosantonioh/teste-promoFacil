@@ -36,6 +36,11 @@ class Empresa(models.Model):
 	endereco = models.TextField(null=True, blank=True)
 	telefone = models.CharField(max_length = 20, default = "",null=True, blank=True)
 
-
 	def __str__(self):
-		return self.nome_empresa if self.nome_empresa else "Nome não disponível"
+			# Verifique se o nome está vazio. Retorne outra informação se necessário.
+			if self.nome_empresa:
+				return self.nome_empresa
+			elif self.email:
+				return f"Empresa com email: {self.email}"
+			else:
+				return "Empresa sem informações"

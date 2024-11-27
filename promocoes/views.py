@@ -36,6 +36,7 @@ def criar_produto(request):
 	produto.save()
 	return render(request, 'cadastroProduto.html')
 
+
 def criar_empresa(request):
 	nome_empresa = request.POST.get("nome_empresa")
 	email = request.POST.get("email")
