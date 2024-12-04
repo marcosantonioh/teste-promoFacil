@@ -1,0 +1,19 @@
+foi feito backend e front de:
+ 
+login
+cadastro user
+cadastro empresa
+cadastro promoção
+
+
+e front de:
+
+pagina inicial
+
+---------------
+assim que abro a pagina de cadastro de empresa ja cria uma em admin
+
+Dificuldade em exibir erros de validação no frontend.
+Erros relacionados à duplicação
+dificuldade
+Configuração e Uso de URLs

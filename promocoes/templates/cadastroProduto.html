@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/partials/cadastro/cadastro_produto.css' %}">
     <link rel="icon" href="{% static 'img/logo_promo-facil/icone_promo.png' %}" type="image/png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -17,33 +18,19 @@
     <div class="container">
 
         
-    {% if status == '0'%}
-        <div class="alert alert-sucess" role="alert">
-            Cadastro realizado com sucesso.
+    {% if erro %}
+        <div class="alert-box">
+            <div class="alert alert-danger">
+                {{ erro }}
+            </div>
         </div>
     {% endif %}
 
-    {% if status == '1'%}
-        <div class="alert alert-danger" role="alert">
-            Nome e email não podem estar vazio.
-        </div>
-    {% endif %}
-
-    {% if status == '2'%}
-        <div class="alert alert-danger" role="alert">
-            Sua senha deve ter pelo menos 8 caracteres.
-        </div>
-    {% endif %}
-
-    {% if status == '3'%}
-        <div class="alert alert-danger" role="alert">
-            Usuário já existe no sistema.
-        </div>
-    {% endif %}
-
-    {% if status == '4'%}
-        <div class="alert alert-danger" role="alert">
-            Erro interno do sistema.
+    {% if mensagem %}
+        <div class="alert-box">
+            <div class="alert alert-success">
+                {{ mensagem }}
+            </div>
         </div>
     {% endif %}
 
