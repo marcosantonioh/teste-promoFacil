@@ -26,6 +26,8 @@ class Promocao(models.Model):
 		return self.nome_produto if self.nome_produto else "Nome não disponível"
 
 
+
+
 class Produto(models.Model):
 	nome_produto = models.CharField(max_length = 100,null=True, blank=True)
 	preco_original = models.DecimalField(max_digits=10, decimal_places=2,null=True, blank=True)
@@ -36,11 +38,30 @@ class Produto(models.Model):
 	def __str__(self):
 		return self.nome_produto if self.nome_produto else "Nome não disponível"
 
+
+
+
+# class Empresa(models.Model):
+# 	nome_empresa = models.CharField(max_length = 100,null=True, blank=True)
+# 	email = models.EmailField(null=True, blank=True)
+# 	endereco = models.TextField(null=True, blank=True)
+# 	telefone = models.CharField(max_length = 20, default = "",null=True, blank=True)
+
+# 	def __str__(self):
+# 			# Verifique se o nome está vazio. Retorne outra informação se necessário.
+# 			if self.nome_empresa:
+# 				return self.nome_empresa
+# 			elif self.email:
+# 				return f"Empresa com email: {self.email}"
+# 			else:
+# 				return "Empresa sem informações"
+			
+
 class Empresa(models.Model):
-	nome_empresa = models.CharField(max_length = 100,null=True, blank=True)
+	nome_empresa = models.CharField(max_length = 100)
 	email = models.EmailField(null=True, blank=True)
 	endereco = models.TextField(null=True, blank=True)
-	telefone = models.CharField(max_length = 20, default = "",null=True, blank=True)
+	telefone = models.CharField(max_length = 20, default = "")
 
 	def __str__(self):
 			# Verifique se o nome está vazio. Retorne outra informação se necessário.
@@ -50,3 +71,9 @@ class Empresa(models.Model):
 				return f"Empresa com email: {self.email}"
 			else:
 				return "Empresa sem informações"
+
+class Categoria(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome

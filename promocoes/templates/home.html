@@ -51,36 +51,31 @@
             <!-- <a href="login.html" class="btn">Login</a>  -->
         </div>
 
-           
+        
+
 
         <div class="nav-bottom">
             <ul>
                 <li>
                     <a href="#"><i class="bx bx-menu"></i>Categorias</a>
                     <ul class="dropdown">
-                        <li><a href="#">Alimentos e Bebidas</a></li>
-                        <li><a href="#">Higiene e Beleza</a></li>
-                        <li><a href="#">Produtos de Limpeza</a></li>
-                        <li><a href="#">Pet Shop</a></li>
-                        <li><a href="#">Utensílios Domésticos</a></li>
-                        <li><a href="#">Saúde e Bem-Estar</a></li>
-                        <li><a href="#">Doces</a></li>
+                        {% for categoria in categorias %}
+                            <li><a href="#">{{ categoria.nome }}</a></li>
+                        {% endfor %}
                     </ul>
                 </li>
+                
                 <li>
                     <a href="#"><i class="bx bx-store"></i>Lojas</a>
                     <ul class="dropdown-store">
-                        <li><a href="#"><img src="{% static 'img/logo_lojas/paraiba.png' %}" alt="Loja 1"> Paraiba</a></li>
-                        <li><a href="#"><img src="{% static 'img/logo_lojas/atacadista.png'%}" alt="Loja 2">Atacadão</a></li>
-                        <li><a href="#"><img src="{% static 'img/logo_lojas/americanas.png'%}" alt="Loja 3"> Lojas Americanas</a></li>
-                        <li><a href="#"><img src="{% static 'img/logo_lojas/assai.png'%}" alt="Assaí Atacadista"> Assaí</a></li>
-                        <li><a href="#"><img src="{% static 'img/logo_lojas/magalu.png'%}" alt="Loja 5"> MAgazine Luiza</a></li>
+                        {% for empresa in empresas %}
+                            <li><a href="#">{{ empresa.nome_empresa }}</a></li>
+                        {% endfor %}
                     </ul>
                 </li>
             </ul>
         </div>
 
-        
 
 
     </nav>
@@ -122,94 +117,8 @@
 
         <h2>Ofertas Recomendadas</h2>
         <div class="recommended-offers">
-            <div class="offer">
-                <img src="{%static 'img/produtos/heineken.webp' %}" alt="Imagem da Oferta 1">
-                <div class="offer-details">
-                    <p class="description">8 Packs Heineken Cerveja Pilsen - 8 latas de 269ml</p>
-                    <p class="original-price"><del>R$ 246,00</del></p>
-                    <p class="price">R$ 159,00</p>
-                    <p class="store-name">Loja 1</p>
-                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
-
-                </div>
-            </div>
-            <div class="offer">
-                <img src="{% static 'img/produtos/frauda.jpg'%}" alt="Imagem da Oferta 2">
-                <div class="offer-details">
-                    <p class="description">Fralda Mili Love&Care Mega Tam XG - 44 Unidades</p>
-                    <p class="original-price"><del>R$ 53,00</del></p>
-                    <p class="price">R$ 46,00</p>
-                    <p class="store-name">Loja 2</p>
-                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
-
-                </div>
-            </div>
-            <div class="offer">
-                <img src="{% static 'img/produtos/image190.png'%}" alt="Imagem da Oferta 3">
-                <div class="offer-details">
-                    <p class="description">Água Micelar Nivea MicellAir Efeito Matte 200ml</p>
-                    <p class="original-price"><del>R$ 29,44</del></p>
-                    <p class="price">R$ 12,74</p>
-                    <p class="store-name">Loja 3</p>
-                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
-
-                </div>
-            </div>
-            <div class="offer">
-                <img src="{%static 'img/produtos/heineken.webp' %}" alt="Imagem da Oferta 1">
-                <div class="offer-details">
-                    <p class="description">8 Packs Heineken Cerveja Pilsen - 8 latas de 269ml</p>
-                    <p class="original-price"><del>R$ 246,00</del></p>
-                    <p class="price">R$ 159,00</p>
-                    <p class="store-name">Loja 1</p>
-                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
-
-                </div>
-            </div>
-            <div class="offer">
-                <img src="{% static 'img/produtos/frauda.jpg'%}" alt="Imagem da Oferta 2">
-                <div class="offer-details">
-                    <p class="description">Fralda Mili Love&Care Mega Tam XG - 44 Unidades</p>
-                    <p class="original-price"><del>R$ 53,00</del></p>
-                    <p class="price">R$ 46,00</p>
-                    <p class="store-name">Loja 2</p>
-                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
-
-                </div>
-            </div>
-            <div class="offer">
-                <img src="{% static 'img/produtos/image190.png'%}" alt="Imagem da Oferta 3">
-                <div class="offer-details">
-                    <p class="description">Água Micelar Nivea MicellAir Efeito Matte 200ml</p>
-                    <p class="original-price"><del>R$ 29,44</del></p>
-                    <p class="price">R$ 12,74</p>
-                    <p class="store-name">Loja 3</p>
-                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
-
-                </div>
-            </div><div class="offer">
-                <img src="{%static 'img/produtos/heineken.webp' %}" alt="Imagem da Oferta 1">
-                <div class="offer-details">
-                    <p class="description">8 Packs Heineken Cerveja Pilsen - 8 latas de 269ml</p>
-                    <p class="original-price"><del>R$ 246,00</del></p>
-                    <p class="price">R$ 159,00</p>
-                    <p class="store-name">Loja 1</p>
-                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
-
-                </div>
-            </div>
-            <div class="offer">
-                <img src="{% static 'img/produtos/frauda.jpg'%}" alt="Imagem da Oferta 2">
-                <div class="offer-details">
-                    <p class="description">Fralda Mili Love&Care Mega Tam XG - 44 Unidades</p>
-                    <p class="original-price"><del>R$ 53,00</del></p>
-                    <p class="price">R$ 46,00</p>
-                    <p class="store-name">Loja 2</p>
-                    <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
-
-                </div>
-            </div>
-            <div class="offer">
+            
+            {% comment %} <div class="offer">
                 <img src="{% static 'img/produtos/image190.png'%}" alt="Imagem da Oferta 3">
                 <div class="offer-details">
                     <p class="description">Água Micelar Nivea MicellAir Efeito Matte 200ml</p>
@@ -220,7 +129,7 @@
                     <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
 
                 </div>
-            </div>
+            </div> {% endcomment %}
             
         </div>
     </div>

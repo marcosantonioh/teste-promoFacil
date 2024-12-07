@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
-from .models import Empresa,Produto, Promocao
+from .models import Empresa,Produto, Promocao, Categoria
 from decimal import Decimal
+
 
 # Create your views here.
 
@@ -110,3 +111,11 @@ def criar_promocao(request):
 					  	)
 	promocao.save()
 	return render(request, 'cadastroPromocao.html', {'success': 'Promoção cadastrada com sucesso!'})
+
+
+
+
+def home(request):
+	categorias = Categoria.objects.all()  # Recupera todas as categorias do banco	
+	empresas = Empresa.objects.all()
+	return render(request, 'home.html', {'categorias': categorias, 'empresas': empresas})
