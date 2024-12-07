@@ -1,4 +1,3 @@
-
 from django.contrib import admin
 from django.urls import path, include
 from promocoes.views import home  # Importa a função home

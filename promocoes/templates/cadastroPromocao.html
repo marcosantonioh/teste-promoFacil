@@ -40,7 +40,7 @@
 
         <div class="form">
 
-            <form method="POST" action="{% url 'criar_produto' %}">
+            <form method="POST" action="{% url 'criar_promocao' %}">
 
                 {% csrf_token %}
 
@@ -56,22 +56,22 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="nomeEmpresa">Nome</label>
-                        <input name = "nome_produto" class="form-control" type="text" placeholder="Nome do Produto">
+                        <input name = "nome_produto" class="form-control" type="text" placeholder="Nome do Produto" required>
                     </div>
 
                     <div class="input-box">
                         <label>Preço Original</label>
-                        <input name="preco_original" class="form-control" type="number" placeholder="Preço Original">                        
+                        <input name="preco_original" class="form-control" type="number" placeholder="Preço Original" required>                        
                     </div>
                     
                     <div class="input-box">
                         <label>Preço Promocional</label>
-                        <input name="preco_promocional" class="form-control" type="number" placeholder="Preço Promocional">
+                        <input name="preco_promocional" class="form-control" type="number" placeholder="Preço Promocional" required>
                     </div>
 
                     <div class="input-box">
                         <label>Descrição</label>
-                        <input name = "descricao"class="form-control" type="text" placeholder="Descrição">
+                        <input name = "descricao"class="form-control" type="text" placeholder="Descrição" required>
                     </div>
 {% comment %} 
                     <div class="input-box">
@@ -87,7 +87,7 @@
 
                     <div class="input-box">
                         <label>Data de Inicio</label>
-                        <input name = "data_inicio" class="form-control" type="datetime-local" placeholder="Data de Inicio ">
+                        <input name = "data_inicio" class="form-control" type="datetime-local" placeholder="Data de Inicio">
                     </div>
 
                     <div class="input-box">
