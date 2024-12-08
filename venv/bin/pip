@@ -1,4 +1,4 @@
-#!/home/marcos-rocha/Downloads/PromoFacil-main/venv/bin/python3
+#!/home/marcos-rocha/promofacil_project/PROMO_FACIL/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

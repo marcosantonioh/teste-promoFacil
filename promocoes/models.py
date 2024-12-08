@@ -8,6 +8,8 @@ class Promocao(models.Model):
     data_inicio = models.DateField()
     data_termino = models.DateField()
     categoria = models.CharField(max_length=100)
+    imagem = models.ImageField(upload_to='produtos/', null=True, blank=True)  # Armazena em media/produtos/
+
 
     def __str__(self):
         return f"{self.nome_produto}"

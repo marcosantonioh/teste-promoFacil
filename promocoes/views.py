@@ -29,9 +29,39 @@ def criar_empresa(request):
 
 
 
+# def criar_promocao(request):
+#     if request.method == "POST":
+#         # Obtém os valores do formulário enviado via POST
+#         nome_produto = request.POST.get('nome_produto')
+#         descricao = request.POST.get('descricao')
+#         preco_original = request.POST.get('preco_original')
+#         preco_promocional = request.POST.get('preco_promocional')
+#         data_inicio = request.POST.get('data_inicio')
+#         data_termino = request.POST.get('data_termino')
+#         categoria = request.POST.get('categoria')
+#         imagem = request.FILES.get('imagem')  # Captura o arquivo de imagem enviado
+
+#         # Cria e salva o objeto no banco de dados
+#         try:
+#             Promocao.objects.create(
+#                 nome_produto=nome_produto,
+#                 descricao=descricao,
+#                 preco_original=float(preco_original),
+#                 preco_promocional=preco_promocional,
+#                 data_inicio=data_inicio,
+#                 data_termino=data_termino,
+#                 categoria=categoria,
+#                 imagem=imagem
+#             )
+#             return HttpResponse("Promoção cadastrada com sucesso!")
+#         except Exception as e:
+#             return HttpResponse(f"Erro ao cadastrar a promoção: {e}")
+
+#     return render(request, 'cadastroPromocao.html')
+
+
 def criar_promocao(request):
-    if request.method == "POST":
-        # Obtém os valores do formulário enviado via POST
+    if request.method == 'POST':
         nome_produto = request.POST.get('nome_produto')
         descricao = request.POST.get('descricao')
         preco_original = request.POST.get('preco_original')
@@ -39,20 +69,23 @@ def criar_promocao(request):
         data_inicio = request.POST.get('data_inicio')
         data_termino = request.POST.get('data_termino')
         categoria = request.POST.get('categoria')
+        imagem = request.FILES.get('imagem')
 
-        # Cria e salva o objeto no banco de dados
-        try:
-            Promocao.objects.create(
-                nome_produto=nome_produto,
-                descricao=descricao,
-                preco_original=float(preco_original),
-                preco_promocional=preco_promocional,
-                data_inicio=data_inicio,
-                data_termino=data_termino,
-                categoria=categoria
-            )
-            return HttpResponse("Promoção cadastrada com sucesso!")
-        except Exception as e:
-            return HttpResponse(f"Erro ao cadastrar a promoção: {e}")
+        # Verifique se todos os dados foram recebidos
+        if not imagem:
+            return HttpResponse("Erro: Imagem não foi enviada corretamente.")
+
+        promocao = Promocao(
+            nome_produto=nome_produto,
+            descricao=descricao,
+            preco_original=preco_original,
+            preco_promocional=preco_promocional,
+            data_inicio=data_inicio,
+            data_termino=data_termino,
+            categoria=categoria,
+            imagem=imagem
+        )
+        promocao.save()
+        return HttpResponse("Promoção cadastrada com sucesso!")
 
     return render(request, 'cadastroPromocao.html')
