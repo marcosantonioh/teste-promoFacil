@@ -115,10 +115,10 @@
         </button>
 
 
-        <h2>Ofertas Recomendadas</h2>
+        {% comment %} <h2>Ofertas Recomendadas</h2>
         <div class="recommended-offers">
             
-            {% comment %} <div class="offer">
+            <div class="offer">
                 <img src="{% static 'img/produtos/image190.png'%}" alt="Imagem da Oferta 3">
                 <div class="offer-details">
                     <p class="description">Água Micelar Nivea MicellAir Efeito Matte 200ml</p>
@@ -129,9 +129,38 @@
                     <button class="like-button"><i class="bx bx-like"></i> <span class="like-count">10</span></button>
 
                 </div>
-            </div> {% endcomment %}
+            </div>
+            
+        </div> {% endcomment %}
+
+
+
+        <h2>Ofertas Recomendadas</h2>
+        <div class="recommended-offers">
+            
+            {% for promocao in promocoes %}
+                <div class="offer">
+                    <!-- Exemplo de imagem padrão para cada produto -->
+                    <img src="{% static 'img/produtos/image190.png' %}" alt="Imagem da Oferta">
+                    
+                    <div class="offer-details">
+                        <p class="description">{{ promocao.nome_produto }}</p>
+                        <p class="original-price"><del>R$ {{ promocao.preco_original }}</del></p>
+                        <p class="price">R$ {{ promocao.preco_promocional }}</p>
+                        <p class="store-name">{{ promocao.get_categoria_display }}</p>
+                        
+                        <button class="like-button">
+                            <i class="bx bx-like"></i> <span class="like-count">0</span>
+                        </button>
+                    </div>
+                </div>
+            {% empty %}
+                <p>Nenhuma oferta recomendada disponível no momento.</p>
+            {% endfor %}
             
         </div>
+
+
     </div>
 
     <script src="{% static 'js/promocoes.js' %}"></script>
