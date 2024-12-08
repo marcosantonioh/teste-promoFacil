@@ -141,7 +141,7 @@
             {% for promocao in promocoes %}
                 <div class="offer">
                     <!-- Exemplo de imagem padrão para cada produto -->
-                    <img src="{{ promocao.imagem }}" alt="Imagem do Produto">
+                    <img src="{{ promocao.imagem.url }}" alt="Imagem do Produto">
                     
                     <div class="offer-details">
                         <p class="description">{{ promocao.nome_produto }}</p>
