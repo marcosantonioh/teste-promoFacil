@@ -1,0 +1,260 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromoFácil</title>
+    <link rel="icon" href="{% static 'img/logo_promo-facil/icone_promo.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/partials/index/style.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+    
+        <nav class="nav-bar">
+            <div class="logo">
+                <a href="#">
+                    <img src="{% static 'img/logo_promo-facil/logo_verde_promo_facil.svg' %}">
+                </a>
+            </div>
+
+            <ul id="nav-links">
+                <li class="link"><a href="{% url 'promocoes' %}">Para você</a></li>
+                <li class="link"><a href="public/html/cadastro_empresa.html">Para suas vendas</a></li>
+                
+                <li class="link cadastro">
+                    <a href="#">Cadastro
+
+                        <span class="material-icons dropdown-icon">
+                            <i class="bx bx-chevron-down"></i>
+                        </span>
+
+                    </a>
+                    <ul class="drop-down">
+                        <li><a href="public/html/cadastro.html">Casdastrar-se</a></li>
+                        <li><a href="public/html/cadastro_empresa.html">Casdastrar empresa</a></li>
+                        
+                    </ul>
+                </li>
+
+                <li class="link"><a href="#footer">Sobre</a></li>
+            </ul>
+    
+            <a href="public/html/login.html" class="btn">Login</a>    
+            
+            <div class="menu-icon">
+                <i class="bx bx-menu" onclick="toggleMenu()"></i>
+            </div>
+
+            
+        </nav>
+
+
+        <header class="container">
+            <div class="content">
+                <span class="bluer"></span>
+                <span class="bluer"></span>
+                <h1>Bem-vindo ao <br>PromoFácil</h1>
+                <p>Encontre as melhores promoções nos mercados locais.</p>
+                <a href="public/html/promocoes.html">
+                    <button class="btn2">Entrar</button>
+                </a>
+                
+            </div>
+            <div class="image">
+                <img src="{% static 'img/index/homem-entregando-mantimentos-para-cliente.png' %}">
+            </div>
+        </header>
+        
+
+
+
+
+
+        <section class="section-carts">
+
+            <div class="container-h1">
+                <h1>Descubra ofertas locais com facilidade.</h1>
+                <h1>Sem complicações</h1>
+            </div>
+
+            
+            <div class="cart-container">
+                
+
+                <div class="cart">
+                    <img src="{% static 'img/index/carrinho.png' %}">
+                    <div class="content">
+                        <p>Carrinho cheio de oportunidades</p>
+                    </div>
+                </div>
+        
+                <div class="cart">
+                    <img src="{% static 'img/index/ponto_localization.png' %}">
+                    <div class="content">
+                        <p>Sua cesta repleta de descontos imperdíveis</p>
+                    </div>
+                </div>
+
+                <div class="cart">
+                    <img src="{% static 'img/index/woman_sacola.png' %}">
+                    <div class="content">
+                        <p>Sua cesta repleta de descontos imperdíveis</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="section-image-text">
+            <img src="{% static 'img/index/mao-carrinho.png' %}">
+            <div class="text-content">
+                <h1>Aumente suas vendas</h1>
+                <h3>Destaque suas promoções aqui</h3>
+
+                <div class="container-p">
+                    <p>Você é dono de um mercado local?<br>
+                        Cadastre-se na nossa plataforma para divulgar suas
+                        promoções e atrair mais clientes para o seu estabelecimento.
+                   
+                    </p>
+                </div>
+                
+               
+                
+
+                <button class="btn" onclick="window.location.href='public/html/cadastro_empresa.html'">Cadastre-se agora</button>
+            </div>
+        </section>
+        
+
+
+
+
+
+
+        <section class="section-cards">
+            <h1>Benefícios</h1>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="gradient-rectangle"></div>
+                    <h2>Economize</h2>
+                    <p>Explore uma variedade de
+                        promoções e descontos em
+                        produtos essenciais, ajudando 
+                        você a economizar tanto 
+                        tempo quanto dinheiro em
+                        suas compras diárias.</p>
+                </div>
+                <div class="card">
+                    <div class="gradient-rectangle"></div>
+                    <h2>Facilidade</h2>
+                    <p>Navegue facilmente por ofertas
+                        e promoções de mercadinhos locais
+                        em um único lugar, simplificando sua
+                        experiência de compra e permitindo
+                        que você aproveite ao máximo as
+                        oportunidades disponíveis.</p>
+                </div>
+                <div class="card">
+                    <div class="gradient-rectangle"></div>
+                    <h2>Atualizações</h2>
+                    <p>Fique sempre atualizado com as
+                        últimas ofertas e promoções,
+                        garantindo que você nunca perca
+                        uma oportunidade de economizar.</p>
+                </div>
+            </div>
+        </section>
+        
+
+
+
+        <section class="section-image-pesquisa">
+
+            <div class="retangulo">
+                <div class="text-content">
+                    <h1>Sua economia<br>começa aqui</h1>
+                        <p>Encontre as melhores ofertas e promoções<br>
+                            nos mercadinhos locais da sua região.
+                        </p>
+                </div>
+
+                <div class="container-btn">
+                    <a href="public/html/cadastro.html"><button class="btn">Cadastre-se agora</button></a>
+                </div>
+            </div>
+
+            <div class="container-img">
+                <img src="{% static 'img/index/Group 1.svg' %}">
+            </div>
+            
+            
+
+        </section>
+        
+
+
+
+
+
+        <footer id="footer" class="footer">
+
+            <button id="scroll-to-top" class="scroll-to-top">
+                <i class="bx bx-up-arrow-alt"></i>
+            </button>
+
+            <div class="image">
+                <img src="{% static 'img/logo_promo-facil/logo_branca__promo_facil.svg' %}">
+            </div>
+            
+
+            <div class="footer-section">
+                <h3>Para você</h3>
+                <ul>
+                    <li><a href="#">Promoções</a></li>
+                    <li><a href="#">Localização</a></li>
+                    <li><a href="#">Comercios proximos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Para seu negócio</h3>
+                <ul>
+                    <li><a href="#">Cadastro</a></li>
+                    <li><a href="#">Consulta</a></li>
+                    <li><a href="#">Localização</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sobre</h3>
+                <ul>
+                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="#">Termos e Políticas</a></li>
+                </ul>
+            </div>
+            <div class="footer-icons">
+                <h3>Connecting</h3>
+                <ul>
+                    <li><a href="#"><i class="bx bxl-facebook-square"></i></a></li>
+                    <li><a href="#"><i class="bx bxl-whatsapp-square"></i></a></li>
+                    <li><a href="#"><i class="bx bxl-instagram-alt"></i></a></li>
+                </ul>
+            </div>
+
+            <p>&copy; 2024 PromoFácil. Todos os direitos reservados.</p>
+        </footer>
+        
+
+
+    </div>
+
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

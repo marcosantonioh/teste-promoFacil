@@ -3,7 +3,7 @@ from django.urls import path, include
 from promocoes.views import home  # Importa a função home
 from django.conf.urls.static import static
 from django.conf import settings
-from promocoes.views import criar_promocao
+from promocoes.views import home, promofacil
 
 
 urlpatterns = [
@@ -11,7 +11,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('usuarios.urls')),
     path('promocoes/', include('promocoes.urls')),
-    path('criar_promocao/', criar_promocao, name='criar_promocao'),
+    path('promofacil/', promofacil, name='promofacil'),
 ]
 
 

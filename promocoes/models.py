@@ -2,7 +2,6 @@ from django.db import models
 
 class Promocao(models.Model):
     nome_produto = models.CharField(max_length=100)
-    descricao = models.TextField(blank=True)
     preco_original = models.FloatField(default=0)
     preco_promocional = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     data_inicio = models.DateField()
